@@ -1,0 +1,9 @@
+.card {
+  width: 280px;
+  height: 280px;
+  margin-top: 5vh;
+}
+.radioInline {
+  display: inline;
+  padding: '0 20px';
+}
