@@ -10,6 +10,10 @@ class FormWithNoHooks extends Component {
     surname: ''
   };
 
+  componentDidMount() {
+    document.title = 'Sem Hooks';
+  }
+
   handleNameChange = e => {
     this.setState({
       name: e.target.value

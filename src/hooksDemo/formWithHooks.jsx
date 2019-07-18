@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardContent } from '@material-ui/core';
 import Input from './input';
 import WidthWindow from './widthWindow';
@@ -14,6 +14,10 @@ const FormWithHooks = props => {
   const handleSurnameChange = e => {
     setSurname(e.target.value);
   };
+
+  useEffect(() => {
+    document.title = 'Com hooks';
+  }, []);
 
   return (
     <Card className="card">
