@@ -7,6 +7,6 @@ export const useWidthResize = () => {
     return () => {
       window.removeEventListener('resize', handleWidthResize);
     };
-  });
+  }, [width]);
   return width;
 };

@@ -1,42 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardContent } from '@material-ui/core';
+import '../demo.css';
 import Input from './input';
 import WidthWindow from './widthWindow';
 import WidthWindowMemo from './widthWindowMemo';
-import '../demo.css';
+import { useDocumentTitle, useInputForm, useWidthResize } from './customHooks';
 
 const FormWithHooks = props => {
-  const [width, setWidth] = useState(window.innerWidth);
-  const [name, setName] = useState('Vader');
-  const handleNameChange = e => {
-    setName(e.target.value);
-  };
-
-  const [surname, setSurname] = useState('');
-  const handleSurnameChange = e => {
-    setSurname(e.target.value);
-  };
-
-  useEffect(() => {
-    document.title = name;
-  }, [name]); // don't lie to hooks
-
-  const handleWidthResize = () => setWidth(window.innerWidth);
-  useEffect(() => {
-    window.addEventListener('resize', handleWidthResize);
-    return () => {
-      // console.log('removeEventListener');
-      window.removeEventListener('resize', handleWidthResize);
-    };
-  }, [width]);
+  const nameInput = useInputForm('Vader');
+  const surnameInput = useInputForm('');
+  const width = useWidthResize();
+  useDocumentTitle(nameInput.value);
 
   return (
     <Card className="card">
       <CardHeader title="Form with hooks" />
       <CardContent>
-        <Input label="Name" value={name} onChange={handleNameChange} />
-        <Input label="Surname" value={surname} onChange={handleSurnameChange} />
-        {/* <WidthWindow width={width} /> */}
+        <Input label="Name" {...nameInput} />
+        <Input label="Surname" {...surnameInput} />
         <WidthWindowMemo width={width} />
       </CardContent>
     </Card>

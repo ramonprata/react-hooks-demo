@@ -1,4 +1,4 @@
-import { useDocumentTitle } from './customHooks/useDocumentTitle';
-import { useWidthResize } from './customHooks/useWidthResize';
-import { useInputForm } from './customHooks/useInputForm';
+import { useDocumentTitle } from './useDocumentTitle';
+import { useWidthResize } from './useWidthResize';
+import { useInputForm } from './useInputForm';
 export { useDocumentTitle, useWidthResize, useInputForm };
