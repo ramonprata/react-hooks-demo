@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardHeader, CardContent } from '@material-ui/core';
 import Input from './input';
 import WidthWindow from './widthWindow';
+import '../demo.css';
 // import {  } from './customHooks';
 
 const FormWithHooks = props => {

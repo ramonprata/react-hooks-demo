@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardContent } from '@material-ui/core';
+import '../demo.css';
 import Input from './input';
 import WidthWindow from './widthWindow';
 
