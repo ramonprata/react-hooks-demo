@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardContent } from '@material-ui/core';
 import Input from './input';
 import WidthWindow from './widthWindow';
+import WidthWindowMemo from './widthWindowMemo';
 import '../demo.css';
 
 const FormWithHooks = props => {
@@ -35,7 +36,8 @@ const FormWithHooks = props => {
       <CardContent>
         <Input label="Name" value={name} onChange={handleNameChange} />
         <Input label="Surname" value={surname} onChange={handleSurnameChange} />
-        <WidthWindow width={width} />
+        {/* <WidthWindow width={width} /> */}
+        <WidthWindowMemo width={width} />
       </CardContent>
     </Card>
   );

@@ -3,6 +3,7 @@ import { Card, CardHeader, CardContent } from '@material-ui/core';
 import '../demo.css';
 import Input from './input';
 import WidthWindow from './widthWindow';
+import WidthWindowMemo from './widthWindowMemo';
 
 class FormWithNoHooks extends Component {
   state = {
@@ -52,7 +53,8 @@ class FormWithNoHooks extends Component {
         <CardContent>
           <Input label="Name" value={name} onChange={this.handleNameChange} />
           <Input label="Surname" value={surname} onChange={this.handleSurnameChange} />
-          <WidthWindow width={width} />
+          {/* <WidthWindow width={width} /> */}
+          <WidthWindowMemo width={width} />
         </CardContent>
       </Card>
     );

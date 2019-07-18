@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 
 const widthWindow = ({ width }) => {
+  console.log('render: widthWindow');
   return (
     <Grid container direction="row" justify="flex-start" alignItems="center">
       <React.Fragment>
