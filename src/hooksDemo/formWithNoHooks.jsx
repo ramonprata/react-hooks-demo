@@ -6,13 +6,23 @@ import WidthWindow from './widthWindow';
 
 class FormWithNoHooks extends Component {
   state = {
-    name: '',
+    name: 'Yoda',
     surname: ''
   };
 
   componentDidMount() {
-    document.title = 'Sem Hooks';
+    document.title = this.state.name;
+    // this.setDocumentTitle();
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    document.title = this.state.name;
+    // this.setDocumentTitle();
+  }
+
+  // setDocumentTitle = () => {
+  //   document.title = this.state.name;
+  // };
 
   handleNameChange = e => {
     this.setState({

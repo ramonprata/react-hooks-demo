@@ -5,7 +5,7 @@ import WidthWindow from './widthWindow';
 import '../demo.css';
 
 const FormWithHooks = props => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState('Vader');
   const handleNameChange = e => {
     setName(e.target.value);
   };
@@ -16,8 +16,8 @@ const FormWithHooks = props => {
   };
 
   useEffect(() => {
-    document.title = 'Com hooks';
-  }, []);
+    document.title = name;
+  }, [name]); // don't lie to hooks
 
   return (
     <Card className="card">
