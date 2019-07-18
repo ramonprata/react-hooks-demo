@@ -7,22 +7,30 @@ import WidthWindow from './widthWindow';
 class FormWithNoHooks extends Component {
   state = {
     name: 'Yoda',
-    surname: ''
+    surname: '',
+    width: window.innerWidth
   };
 
   componentDidMount() {
-    document.title = this.state.name;
-    // this.setDocumentTitle();
+    window.addEventListener('resize', this.handleReziseWidth);
+    this.setDocumentTitle();
   }
 
   componentDidUpdate(prevProps, prevState) {
-    document.title = this.state.name;
-    // this.setDocumentTitle();
+    this.setDocumentTitle();
   }
 
-  // setDocumentTitle = () => {
-  //   document.title = this.state.name;
-  // };
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleReziseWidth);
+  }
+
+  setDocumentTitle = () => {
+    document.title = this.state.name;
+  };
+
+  handleReziseWidth = () => {
+    this.setState({ width: window.innerWidth });
+  };
 
   handleNameChange = e => {
     this.setState({
@@ -37,14 +45,14 @@ class FormWithNoHooks extends Component {
   };
 
   render() {
-    const { name, surname } = this.state;
+    const { name, surname, width } = this.state;
     return (
       <Card className="card">
         <CardHeader title="Form with no hooks" />
         <CardContent>
           <Input label="Name" value={name} onChange={this.handleNameChange} />
           <Input label="Surname" value={surname} onChange={this.handleSurnameChange} />
-          <WidthWindow width={0} />
+          <WidthWindow width={width} />
         </CardContent>
       </Card>
     );

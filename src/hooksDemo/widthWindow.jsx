@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 
-const WidthWindow = ({ width }) => {
+const widthWindow = ({ width }) => {
   return (
     <Grid container direction="row" justify="flex-start" alignItems="center">
       <React.Fragment>
@@ -11,4 +11,4 @@ const WidthWindow = ({ width }) => {
   );
 };
 
-export default WidthWindow;
+export default widthWindow;

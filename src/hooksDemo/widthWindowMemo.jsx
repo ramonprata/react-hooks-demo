@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Grid } from '@material-ui/core';
 
-const WidthWindow = ({ width }) => {
+const widthWindow = ({ width }) => {
   return useMemo(() => {
     return (
       <Grid container direction="row" justify="flex-start" alignItems="center">
@@ -14,4 +14,4 @@ const WidthWindow = ({ width }) => {
   }, [width]);
 };
 
-export default WidthWindow;
+export default widthWindow;
